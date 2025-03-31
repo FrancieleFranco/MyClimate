@@ -11,5 +11,5 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
   }
-  @Input()  titelFooter: string ='2025 MyClimate App Pessoal de Previsão do Tempo.'
+  @Input()  titelFooter: string =''
 }
