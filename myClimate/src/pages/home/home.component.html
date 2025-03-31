@@ -1,0 +1,10 @@
+<div class="centraliza">
+  <div class="input-container">
+      <img src="" alt="Logo" class="logo" >
+      <input type="text" placeholder="Pesquise por uma cidade..." [(ngModel)]="inputValue"/>
+      <app-button labelButton="Buscar" (click)=" searchButton()"></app-button>
+
+  </div>
+  <p *ngIf="mensagem">{{ mensagem, }}</p>
+</div>
+
