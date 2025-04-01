@@ -1,10 +1,29 @@
-<div class="centraliza">
+<div class="home">
   <div class="input-container">
-      <img src="" alt="Logo" class="logo" >
-      <input type="text" placeholder="Pesquise por uma cidade..." [(ngModel)]="inputValue"/>
-      <app-button labelButton="Buscar" (click)=" searchButton()"></app-button>
+    <img src="" alt="Logo" class="logo">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="Pesquise por uma cidade..." formControlName="city" />
+      <app-button type="submit" [labelButton]="'Buscar'"></app-button>
+    </form>
 
   </div>
-  <p *ngIf="mensagem">{{ mensagem, }}</p>
 </div>
-
+<div class="response-container">
+  <div class="card" *ngIf="resultWeather">
+   <h2>Previsao do tempo:</h2>
+    <p><strong>Cidade:</strong> {{ resultWeather.name }}</p>
+    <p><strong>País:</strong> {{ resultWeather.sys.country }}</p>
+    <p><strong>Temperatura:</strong> {{ resultWeather.main.temp | number: '1.0-0' }} °C</p>
+    <p><strong>Sensação Térmica:</strong> {{ resultWeather.main.feels_like | number: '1.0-0' }} °C</p>
+    <p><strong>Temperatura Mínima:</strong> {{ resultWeather.main.temp_min | number: '1.0-0' }} °C</p>
+    <p><strong>Temperatura Máxima: </strong>{{ resultWeather.main.temp_max | number: '1.0-0' }} °C</p>
+    <p><strong>Umidade:</strong> {{ resultWeather.main.humidity }}%</p>
+    <p><strong>Pressão: </strong>{{ resultWeather.main.pressure }} hPa</p>
+    <p><strong>Visibilidade: </strong>{{ resultWeather.visibility }} m</p>
+    <p><strong>Condições: </strong>{{ resultWeather.weather[0].description }}</p>
+    <p><strong>Velocidade do Vento: </strong>{{ resultWeather.wind.speed }} m/s</p>
+  </div>
+</div>
+<div *ngIf="errorMessage" style="color: red;">
+  <p>{{ errorMessage }}</p>
+</div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { EventEmitter, Input, NgModule, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from './button.component';
 
@@ -9,4 +9,7 @@ import { ButtonComponent } from './button.component';
   declarations: [ButtonComponent],
   exports: [ButtonComponent]
 })
-export class ButtonModule { }
+export class ButtonModule {
+  @Input() labelButton: string = '';
+}
+
