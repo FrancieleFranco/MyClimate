@@ -1,6 +1,6 @@
 <div class="home">
   <div class="input-container">
-    <img src="" alt="Logo" class="logo">
+    <img src="assets/weather01.jpg" alt="Logo" class="logo">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <input type="text" placeholder="Pesquise por uma cidade..." formControlName="city" />
       <app-button type="submit" [labelButton]="'Buscar'"></app-button>
@@ -24,6 +24,7 @@
     <p><strong>Velocidade do Vento: </strong>{{ resultWeather.wind.speed }} m/s</p>
   </div>
 </div>
-<div *ngIf="errorMessage" style="color: red;">
+<div *ngIf="errorMessage" class="errorMessage">
   <p>{{ errorMessage }}</p>
 </div>
+<p *ngIf="cityFound && messageTemperature !==null" class="temperature">{{ messageTemperature }}</p>

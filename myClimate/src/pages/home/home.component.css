@@ -18,6 +18,10 @@
 
 .logo {
   width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: white;
 }
 
 .input-container input {
@@ -71,4 +75,25 @@
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
+}
+
+.temperature{
+  background-color: #f0f8ff;
+  color: #333;
+  padding: 15px;
+  border-left: 5px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.errorMessage{
+  background-color: #f0f8ff;
+  color: red;
+  padding: 15px;
+  border-left: 5px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
 }
